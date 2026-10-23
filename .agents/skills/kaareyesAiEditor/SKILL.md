@@ -41,7 +41,12 @@ in the user's language, with blue markers (🟦) for the steps and `code` for wh
 🟦 **4. Give notes** in plain words: "faster", "bigger captions", "palitan ang hook".
    Say "always ..." or "never ..." to save a lasting rule.
 🟦 **5. Type** `approved` or `final` for the full-quality `-final.mp4`.
-🟦 **More:** `horizontal version` for YouTube, `change my style`, `start` to set up again.
+🟦 **Change the style:** type `change my style` (captions, hook, pace, graphics, color, sound).
+   Or one thing at a time: "captions at the bottom", "no hook text", "warmer colors".
+🟦 **Change the orientation:** `vertical` for Reels/TikTok/Shorts (9:16, the default),
+   `horizontal version` or `for YouTube` (16:9), or `both`.
+   Example: `edit this: Bali trip, 60 seconds, horizontal`
+🟦 **More:** `start` to set up again, `[HOW]` to see this guide.
 
 ## When the user says "start" (or kit/ or my-style.md is missing)
 

@@ -95,7 +95,9 @@ Make a horizontal YouTube version of the approved video.
 New rule: never use music, only light sound effects.
 ```
 
-To change your style later, say `change my style`. To start over, delete `my-style.md` and
+To change your style later, say `change my style`. To change the orientation, say `vertical`,
+`horizontal version` (YouTube, 16:9), or `both`, for example `edit this: Bali trip, 60 seconds,
+horizontal`. To start over, delete `my-style.md` and
 type `start`.
 
 Vertical 9:16 for Reels, TikTok, and Shorts by default. Ask for a horizontal version for

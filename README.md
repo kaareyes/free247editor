@@ -39,17 +39,49 @@ Claude desktop app works too: in its Code tab, pick Local and the folder.
 3. **Type `start`.** The agent checks your computer, installs what is missing (with your OK),
    renders a test video, and asks a few questions about your style.
 
-## Editing
+## How to use it
 
-1. Put a raw video in the `inbox` folder, or drag it into the agent's chat.
-2. Say **"edit this"**.
-3. Watch the draft from `outbox`, say what to change, and repeat until you say "final".
+Open your agent **in the `free247editor` folder** every time, then follow these steps.
 
-Plain words are enough; every agent picks the skill from its description. You can also call
-it by name: `/free247editor` in Claude Code and Cursor, `$free247editor` in Codex.
+1. **Drop your video in `inbox/`** (or drag it into the chat). Phone footage in `.MOV` or
+   `.MP4` is fine; your original is never changed.
+2. **Say `edit this`.** The agent transcribes it, cuts dead air, adds captions, a hook,
+   motion cards, and light sound effects in your style, then renders a draft.
+3. **Watch the draft.** It opens automatically and is saved as `outbox/<name>-v1.mp4`.
+4. **Give notes in plain words**, for example:
+   - "faster" / "mas mabilis"
+   - "bigger captions" / "palitan ang hook"
+   - "sounds are too loud" / "remove the whoosh"
+   - "always put captions above my head" (lasting notes are saved to `my-rules.md`)
+5. **Say `approved` or `final`.** You get `outbox/<name>-final.mp4` at full quality.
+
+Copy-paste prompts:
+
+```text
+edit this
+```
+
+```text
+Edit the newest video in inbox. I'm a travel vlogger: keep it natural, show the place name
+in the hook, add a card when I name a camera or gear, and cut the long pauses.
+```
+
+```text
+Make a horizontal YouTube version of the approved video.
+```
+
+```text
+New rule: never use music, only light sound effects.
+```
+
+To change your style later, say `change my style`. To start over, delete `my-style.md` and
+type `start`.
 
 Vertical 9:16 for Reels, TikTok, and Shorts by default. Ask for a horizontal version for
 YouTube and it gets its own framing and text placement.
+
+Tip for vlogs: shoot at the highest resolution your phone or camera allows. Low-resolution
+clips are upscaled to 1080x1920 and look soft.
 
 ## What it does
 
@@ -77,9 +109,12 @@ YouTube and it gets its own framing and text placement.
   on your own computer (`pip install faster-whisper`, needs Python).
 - About 1 GB of disk space.
 
-Tested on Windows 11 with Claude Code (setup, test render, transcription, and the cutting
-tools). The other agents read the same standard files but are not tested yet. The editing
-engine is cross-platform, so macOS and Linux should work, but they are not tested yet either.
+Tested on Windows 11 and macOS with Claude Code (setup, transcription, cuts, captions, and
+draft renders). The other agents read the same standard files but are not tested yet. Linux
+should work but is not tested.
+
+On macOS, install tools with Homebrew (`brew install node ffmpeg git`). Setup prints the
+exact command if something is missing.
 
 ## Costs
 

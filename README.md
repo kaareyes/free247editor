@@ -53,13 +53,19 @@ it (or type `[WEB]` in your agent) to use the editor in your browser. No termina
 A real travel-vlog clip, before and after one `edit this` (vertical 9:16, 30 seconds, hook text,
 word-by-word captions, motion cards, light sound effects):
 
-<p align="center"><img src="samples/bali-preview.gif" width="270" alt="Preview of the edited Bali sample: hook text, word-by-word captions, and motion cards"></p>
+<table align="center">
+<tr><th align="center">Before (raw, 33 s)</th><th align="center">After (edited, 30 s)</th></tr>
+<tr>
+<td align="center"><img src="samples/bali-original-preview.gif" width="270" alt="Raw Bali clip before editing"></td>
+<td align="center"><img src="samples/bali-preview.gif" width="270" alt="Edited Bali clip with hook text, word-by-word captions, and motion cards"></td>
+</tr>
+<tr>
+<td align="center"><a href="samples/bali-original.mov">Full original video</a></td>
+<td align="center"><a href="samples/bali-edited.mp4">Full edited video</a></td>
+</tr>
+</table>
 
-<p align="center"><sub>Preview of the edited sample (first 12 seconds). Full videos below.</sub></p>
-
-| Before (raw, 33 s) | After (edited, 30 s) |
-| --- | --- |
-| [samples/bali-original.mov](samples/bali-original.mov) | [samples/bali-edited.mp4](samples/bali-edited.mp4) |
+<p align="center"><sub>Previews show the first 12 seconds of each.</sub></p>
 
 Click a file on GitHub to play it. The sample is a phone clip, so the edited version is a little soft.
 

@@ -4,7 +4,8 @@
 //
 //   node setup.mjs
 import { spawnSync } from 'node:child_process';
-import { copyFileSync, existsSync, mkdirSync } from 'node:fs';
+import { chmodSync, copyFileSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { homedir } from 'node:os';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -82,6 +83,28 @@ const groq = Boolean(process.env.GROQ_API_KEY);
 const localWhisper = Boolean(run('python', ['-c', 'import faster_whisper'], root, true));
 console.log(`Groq key in .env: ${groq ? 'yes' : 'no'}`);
 console.log(`Local faster-whisper: ${localWhisper ? 'yes' : 'no'}`);
+
+step('App (the point-and-click page)');
+const launcher = join(root, win ? 'Start kaareyesAiEditor.bat' : 'Start kaareyesAiEditor.command');
+if (existsSync(join(root, 'app', 'server.mjs')) && existsSync(launcher)) {
+  const agentsFound = ['claude', 'codex'].filter((a) => run(a, ['--version'], root, true));
+  console.log(`Agents found: ${agentsFound.join(', ') || 'none yet (install Claude Code or Codex to edit from the app)'}`);
+  try {
+    if (!win) chmodSync(launcher, 0o755);
+    if (win) {
+      // Desktop shortcut (.lnk). Paths go in through the environment so no quoting is needed.
+      const ps = "$d=[Environment]::GetFolderPath('Desktop');$s=(New-Object -ComObject WScript.Shell).CreateShortcut(\"$d\\Start kaareyesAiEditor.lnk\");"
+        + '$s.TargetPath=$env:KAE_TARGET;$s.WorkingDirectory=$env:KAE_DIR;$s.Save()';
+      spawnSync('powershell', ['-NoProfile', '-Command', ps], { env: { ...process.env, KAE_TARGET: launcher, KAE_DIR: root }, stdio: 'ignore' });
+    } else if (process.platform === 'darwin') {
+      const desk = join(homedir(), 'Desktop', 'Start kaareyesAiEditor.command');
+      writeFileSync(desk, `#!/bin/bash\nexec "${launcher.replace(/(["\\$`])/g, '\\$1')}"\n`);
+      chmodSync(desk, 0o755);
+    }
+    console.log('Desktop shortcut: Start kaareyesAiEditor');
+  } catch { console.log('Could not make a Desktop shortcut. Use the Start file in the project folder.'); }
+  console.log('Open the app: double-click "Start kaareyesAiEditor" (Desktop or this folder), or type [WEB] in your agent.');
+}
 
 console.log(`\nSETUP COMPLETE${groq || localWhisper ? '' : ' (transcription not configured yet)'}`);
 console.log(`Drop raw videos in ${resolve(root, 'inbox')} or drag one into your agent's chat and say "edit this".`);

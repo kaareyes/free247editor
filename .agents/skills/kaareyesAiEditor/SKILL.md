@@ -46,7 +46,24 @@ in the user's language, with blue markers (🟦) for the steps and `code` for wh
 🟦 **Change the orientation:** `vertical` for Reels/TikTok/Shorts (9:16, the default),
    `horizontal version` or `for YouTube` (16:9), or `both`.
    Example: `edit this: Bali trip, 60 seconds, horizontal`
+🟦 **Prefer clicking?** Type `[WEB]`, or double-click `Start kaareyesAiEditor`, to open the
+   editor in your browser (drag the video, pick style, sounds, and orientation there).
 🟦 **More:** `start` to set up again, `[HOW]` to see this guide.
+
+## When the user types [WEB]
+
+Open the point-and-click app and do nothing else. From the repo root, run
+`node app/server.mjs` in the background (Windows: `start /B node app/server.mjs`). It starts the
+page and opens the user's browser; if it is already running it just opens the browser. Reply in
+one line: "The editor is open in your browser at http://127.0.0.1:4747 (keep it running)."
+If Node is missing, tell the user to run `start` first.
+
+## When run from the app
+
+The app (`app/server.mjs`) runs you in the background with no one watching the chat. Do not ask
+questions: use `my-style.md`, `my-rules.md`, and sensible defaults. Do not open the video yourself;
+the app plays it. Save drafts to `outbox/` as usual and end with 3 to 5 plain-words bullets and
+the output file name. Notes and "approved" arrive later as follow-up messages in the same session.
 
 ## When the user says "start" (or kit/ or my-style.md is missing)
 

@@ -34,6 +34,9 @@ free247editor folder from now on.
 From then on, open your agent in the `free247editor` folder so it finds the skill. The
 Claude desktop app works too: in its Code tab, pick Local and the folder.
 
+When it finishes, it also puts a **Start kaareyesAiEditor** shortcut on your Desktop. Double-click
+it (or type `[WEB]` in your agent) to use the editor in your browser. No terminal needed.
+
 ### Step by step
 
 1. **Get it.** `git clone https://github.com/kaareyes/free247editor.git`, or use
@@ -42,8 +45,35 @@ Claude desktop app works too: in its Code tab, pick Local and the folder.
    `codex`. In Cursor, Antigravity, or Windsurf, open the folder as the workspace.
 3. **Type `start`.** The agent checks your computer, installs what is missing (with your OK),
    renders a test video, and asks a few questions about your style.
+4. **Open the app (optional).** Double-click **Start kaareyesAiEditor** in the folder or on your
+   Desktop. Nothing extra to install: it runs on the Node.js you already have.
 
-## How to use it
+## Use the app (no terminal)
+
+Prefer clicking to typing? Open the editor in your browser:
+
+- **Mac:** double-click `Start kaareyesAiEditor.command`
+- **Windows:** double-click `Start kaareyesAiEditor.bat`
+- **From your agent:** type `[WEB]`
+
+Then:
+
+1. **Drag your video** into the page.
+2. Type the **story** (optional), pick the **length** and **orientation** (vertical, horizontal,
+   or both), choose **Claude Code** or **Codex** (whichever you subscribe to), and press
+   **Edit this**.
+3. **Watch the draft** on the page, type notes, press **Send notes**, and press **Approve** for
+   the final video.
+4. Use the other tabs to change everything: **Style** (captions, hook, pace, graphics, color,
+   sound), **Sounds** (add your music and effects), **Rules** (lasting preferences), and
+   **How to use**.
+
+Keep the black window open while you edit; close it to stop the app. The app edits with your own
+Claude Code or Codex in the background (sign in to one of them once), so it counts against that
+subscription. The terminal way below still works exactly the same, and both share the same
+folders, style, and rules.
+
+## How to use it (in the chat)
 
 Open your agent **in the `free247editor` folder** every time, then follow these steps.
 
@@ -125,7 +155,7 @@ clips are upscaled to 1080x1920 and look soft.
   plan; Pro works, Max is better if you edit often), Codex, Cursor, Antigravity, Gemini CLI,
   GitHub Copilot agent mode, or Windsurf. Editing uses a lot of usage. Codex blocks internet
   in its sandbox by default, so approve network access when setup or transcription asks.
-- **Node.js 22+, Git, FFmpeg, and Chrome.** Setup tells you what is missing and the agent can
+- **Node.js 22+, Git, FFmpeg, and Chrome** (the app needs nothing else). Setup tells you what is missing and the agent can
   install it for you.
 - **Transcription, free either way:** a free [Groq](https://console.groq.com/keys) key
   (fast, best for Taglish), or [faster-whisper](https://github.com/SYSTRAN/faster-whisper)
@@ -167,6 +197,8 @@ free247editor/
   .agents/skills/    the kaareyesAiEditor skill: how your agent runs the editor
   .claude/skills/    pointer to that skill for Claude Code
   AGENTS.md          tells every agent to use the skill (CLAUDE.md imports it)
+  app/               the point-and-click web app (opens in your browser)
+  Start kaareyesAiEditor.command / .bat   double-click to open the app
   setup.mjs          one-time setup (safe to re-run)
   tools/             free transcription
   inbox/             your raw videos

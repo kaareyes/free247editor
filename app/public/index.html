@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kaareyesAiEditor</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header>
+  <div class="brand"><span class="logo">🟦</span> kaareyesAiEditor</div>
+  <nav id="tabs">
+    <button data-tab="edit" class="on">Edit</button>
+    <button data-tab="style">Style</button>
+    <button data-tab="sounds">Sounds</button>
+    <button data-tab="rules">Rules</button>
+    <button data-tab="how">How to use</button>
+  </nav>
+</header>
+
+<main>
+  <section id="banner" class="card warn" hidden>
+    <h2>Let's get you ready</h2>
+    <ul id="todo"></ul>
+    <div class="row">
+      <button id="runSetup" class="primary" hidden>Run setup</button>
+      <label id="keyBox" hidden>
+        Free Groq key
+        <input id="keyInput" type="password" placeholder="Paste key here" autocomplete="off">
+        <button id="saveKey">Save</button>
+        <a href="https://console.groq.com/keys" target="_blank" rel="noopener">Get a free key</a>
+      </label>
+    </div>
+    <pre id="setupLog" class="detail" hidden></pre>
+  </section>
+
+  <!-- EDIT -->
+  <section id="tab-edit" class="tab">
+    <div class="grid">
+      <div class="card">
+        <h2>1. Your video</h2>
+        <div id="drop" class="drop" tabindex="0">
+          <div><strong>Drag your video here</strong><br>or click to choose a file</div>
+          <input id="file" type="file" accept="video/*,.mov,.mp4,.m4v,.mkv,.webm" hidden>
+        </div>
+        <div id="upload" class="bar" hidden><i></i></div>
+        <ul id="inbox" class="list"></ul>
+      </div>
+
+      <div class="card">
+        <h2>2. Tell me about it</h2>
+        <label>Story <small>(optional)</small>
+          <textarea id="story" rows="3" placeholder="Example: Day 1 in Bali, the tiny planet camera trick"></textarea>
+        </label>
+        <div class="two">
+          <label>Length
+            <select id="length">
+              <option value="">Natural</option>
+              <option value="15">15 seconds</option>
+              <option value="30" selected>30 seconds</option>
+              <option value="60">60 seconds</option>
+              <option value="90">90 seconds</option>
+            </select>
+          </label>
+          <label>Orientation
+            <select id="orientation">
+              <option value="vertical">Vertical 9:16 (Reels, TikTok, Shorts)</option>
+              <option value="horizontal">Horizontal 16:9 (YouTube)</option>
+              <option value="both">Both</option>
+            </select>
+          </label>
+        </div>
+        <label>Edit with
+          <select id="agent"></select>
+        </label>
+        <button id="editBtn" class="primary big">Edit this</button>
+        <p class="hint">Your style, sounds and rules from the other tabs are used automatically.</p>
+      </div>
+    </div>
+
+    <div id="progress" class="card" hidden>
+      <h2><span id="spin" class="spin"></span> <span id="progTitle">Working...</span></h2>
+      <ol id="steps" class="steps"></ol>
+      <details><summary>Details</summary><pre id="detail" class="detail"></pre></details>
+    </div>
+
+    <div id="result" class="card" hidden>
+      <h2>3. Your draft</h2>
+      <div class="player">
+        <video id="video" controls playsinline></video>
+        <div>
+          <select id="versions"></select>
+          <div id="summary" class="summary"></div>
+          <label>Notes for the editor
+            <textarea id="note" rows="3" placeholder="Example: faster, bigger captions, change the hook"></textarea>
+          </label>
+          <div id="chips" class="chips"></div>
+          <div class="row">
+            <button id="sendNote" class="primary">Send notes</button>
+            <button id="approve">Approve (final)</button>
+          </div>
+          <p class="hint">Say "always..." or "never..." and it is saved as a rule for every future edit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STYLE -->
+  <section id="tab-style" class="tab" hidden>
+    <div class="card">
+      <h2>Your style</h2>
+      <p class="hint">Everything the editor follows. Change it and press Save.</p>
+      <div id="styleForm" class="two"></div>
+      <div class="row"><button id="saveStyle" class="primary">Save style</button><span id="styleMsg" class="hint"></span></div>
+    </div>
+  </section>
+
+  <!-- SOUNDS -->
+  <section id="tab-sounds" class="tab" hidden>
+    <div class="card">
+      <h2>Music and sound effects</h2>
+      <p class="hint">Files you add here are the only music and effects the editor will use.</p>
+      <div id="dropSound" class="drop small" tabindex="0">
+        <div><strong>Drag audio here</strong> or click (mp3, wav, m4a)</div>
+        <input id="soundFile" type="file" accept="audio/*" multiple hidden>
+      </div>
+      <ul id="soundList" class="list"></ul>
+      <div id="soundModeBox"></div>
+      <button id="saveSound" class="primary">Save sound mode</button>
+    </div>
+  </section>
+
+  <!-- RULES -->
+  <section id="tab-rules" class="tab" hidden>
+    <div class="card">
+      <h2>Your rules</h2>
+      <p class="hint">Lasting preferences. These beat your style on every edit.</p>
+      <ul id="ruleList" class="list"></ul>
+      <div class="row">
+        <input id="ruleInput" placeholder="Example: never use music" class="grow">
+        <button id="addRule" class="primary">Add rule</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section id="tab-how" class="tab" hidden>
+    <div class="card how">
+      <h2>How to use</h2>
+      <p>🟦 <b>1. Drop your video</b> on the Edit tab.</p>
+      <p>🟦 <b>2. Add a story and length</b> (optional), pick vertical or horizontal, then press <b>Edit this</b>.</p>
+      <p>🟦 <b>3. Watch the draft.</b> It appears right on the page.</p>
+      <p>🟦 <b>4. Send notes</b> in plain words: "faster", "bigger captions", "palitan ang hook".</p>
+      <p>🟦 <b>5. Press Approve</b> for the full-quality final video.</p>
+      <p>🟦 <b>Change the style</b> in the Style tab, <b>add music</b> in Sounds, <b>manage rules</b> in Rules.</p>
+      <p class="hint">Prefer typing? The chat way still works exactly as before: put a video in <code>inbox/</code> and type <code>edit this</code>, or type <code>[HOW]</code>.</p>
+      <p class="hint">Files are on your computer in: <code id="folder"></code></p>
+    </div>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

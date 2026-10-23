@@ -1,13 +1,17 @@
 # kaareyesAiEditor
 
-A free, open-source personal video editor that runs inside your AI coding agent: Claude Code,
-Codex, Cursor, Antigravity, Gemini CLI, GitHub Copilot, Windsurf, and others that support
+**Your personal AI video editor for travel vlogs, Reels, TikToks, and Shorts. You record, it edits.**
+
+A free, open-source editor that runs inside your AI coding agent: Claude Code, Codex, Cursor,
+Antigravity, Gemini CLI, GitHub Copilot, Windsurf, and others that support
 [Agent Skills](https://agentskills.io).
 
-Drop in a raw video and say **"edit this"**. You get back a cut, captioned edit with motion
-graphics, zoom-ins, and sound. Then give notes in plain words (English, Tagalog, Taglish),
-the way you would to a human editor. Lasting notes become rules it follows on every
-future edit, so it learns your style.
+Drop in a raw video and say **"edit this"**. You get back a cut, captioned edit with a hook,
+motion graphics, and sound. Then give notes in plain words (English, Tagalog, Taglish), the
+way you would to a human editor. Lasting notes become rules it follows on every future edit,
+so it learns your style.
+
+**Quick start:** [Setup](#setup-once) → [How to use it](#how-to-use-it) → [What you need](#what-you-need)
 
 ## Setup (once)
 

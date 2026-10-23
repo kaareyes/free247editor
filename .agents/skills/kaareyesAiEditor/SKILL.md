@@ -167,3 +167,4 @@ any other paid API). The default is to use none of them.
 - Post, upload, or send a video anywhere.
 - Print or log the Groq key.
 - Commit or publish anything in `inbox/`, `outbox/`, `my-style.md`, `my-rules.md`, or `my-sounds/`.
+  The one exception is `samples/`, the README's before/after demo the user chose to publish.

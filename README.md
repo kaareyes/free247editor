@@ -1,4 +1,4 @@
-# free247editor
+# kaareyesAiEditor
 
 A free, open-source personal video editor that runs inside your AI coding agent: Claude Code,
 Codex, Cursor, Antigravity, Gemini CLI, GitHub Copilot, Windsurf, and others that support
@@ -17,31 +17,31 @@ Open your agent in any folder (for example `claude` or `codex` in a terminal, or
 in Cursor or Antigravity) and paste:
 
 ```text
-Set up free247editor for me. Clone https://github.com/riecodes/free247editor.git into my
+Set up kaareyesAiEditor for me. Clone https://github.com/kaareyes/kaareyesAiEditor.git into my
 Documents folder (install Git first if it is missing, after asking me). Then follow the
-"start" steps in its skill, .agents/skills/free247editor/SKILL.md: run node setup.mjs from
+"start" steps in its skill, .agents/skills/kaareyesAiEditor/SKILL.md: run node setup.mjs from
 that folder, install anything it reports missing after asking me, help me choose free
 transcription (a Groq key, which you get for me if you have browser tools such as Claude in
 Chrome, or local faster-whisper), open the test video, and walk me through style setup. When
 you finish, tell me the full path of the inbox folder and remind me to open my agent in the
-free247editor folder from now on.
+kaareyesAiEditor folder from now on.
 ```
 
-From then on, open your agent in the `free247editor` folder so it finds the skill. The
+From then on, open your agent in the `kaareyesAiEditor` folder so it finds the skill. The
 Claude desktop app works too: in its Code tab, pick Local and the folder.
 
 ### Step by step
 
-1. **Get it.** `git clone https://github.com/riecodes/free247editor.git`, or use
+1. **Get it.** `git clone https://github.com/kaareyes/kaareyesAiEditor.git`, or use
    *Code > Download ZIP* on GitHub and unzip it.
-2. **Open the folder in your agent.** In a terminal: `cd free247editor` then `claude` or
+2. **Open the folder in your agent.** In a terminal: `cd kaareyesAiEditor` then `claude` or
    `codex`. In Cursor, Antigravity, or Windsurf, open the folder as the workspace.
 3. **Type `start`.** The agent checks your computer, installs what is missing (with your OK),
    renders a test video, and asks a few questions about your style.
 
 ## How to use it
 
-Open your agent **in the `free247editor` folder** every time, then follow these steps.
+Open your agent **in the `kaareyesAiEditor` folder** every time, then follow these steps.
 
 1. **Drop your video in `inbox/`** (or drag it into the chat). Phone footage in `.MOV` or
    `.MP4` is fine; your original is never changed.
@@ -123,12 +123,12 @@ use. The agent will never call a paid service (ElevenLabs, Kie.ai, or others) wi
 
 ## How each agent finds it
 
-The whole editor is one skill, `.agents/skills/free247editor/SKILL.md`, in the shared
+The whole editor is one skill, `.agents/skills/kaareyesAiEditor/SKILL.md`, in the shared
 Agent Skills folder that Codex, Cursor, Antigravity, Gemini CLI, GitHub Copilot, Windsurf,
 and OpenCode read. Claude Code reads skills only from `.claude/skills/`, so a short copy
 there points to the same file. `AGENTS.md`, which `CLAUDE.md` imports, tells every agent to
-use the skill. Edit only `.agents/skills/free247editor/SKILL.md`; if you change its
-description, copy the new one into `.claude/skills/free247editor/SKILL.md` too.
+use the skill. Edit only `.agents/skills/kaareyesAiEditor/SKILL.md`; if you change its
+description, copy the new one into `.claude/skills/kaareyesAiEditor/SKILL.md` too.
 
 ## Not included
 
@@ -140,8 +140,8 @@ description, copy the new one into `.claude/skills/free247editor/SKILL.md` too.
 ## Folders
 
 ```
-free247editor/
-  .agents/skills/    the free247editor skill: how your agent runs the editor
+kaareyesAiEditor/
+  .agents/skills/    the kaareyesAiEditor skill: how your agent runs the editor
   .claude/skills/    pointer to that skill for Claude Code
   AGENTS.md          tells every agent to use the skill (CLAUDE.md imports it)
   setup.mjs          one-time setup (safe to re-run)
@@ -170,7 +170,7 @@ Nate Herk (MIT), built on [HyperFrames](https://github.com/heygen-com/hyperframe
 here. The AI Automation Society brand assets inside that kit belong to their owner and are
 not licensed for reuse.
 
-free247editor is not affiliated with Nate Herk, HeyGen, or any of the AI agent makers.
+kaareyesAiEditor is not affiliated with Nate Herk, HeyGen, or any of the AI agent makers.
 
 ## License
 

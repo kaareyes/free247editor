@@ -53,6 +53,10 @@ it (or type `[WEB]` in your agent) to use the editor in your browser. No termina
 A real travel-vlog clip, before and after one `edit this` (vertical 9:16, 30 seconds, hook text,
 word-by-word captions, motion cards, light sound effects):
 
+<p align="center"><img src="samples/bali-preview.gif" width="270" alt="Preview of the edited Bali sample: hook text, word-by-word captions, and motion cards"></p>
+
+<p align="center"><sub>Preview of the edited sample (first 12 seconds). Full videos below.</sub></p>
+
 | Before (raw, 33 s) | After (edited, 30 s) |
 | --- | --- |
 | [samples/bali-original.mov](samples/bali-original.mov) | [samples/bali-edited.mp4](samples/bali-edited.mp4) |

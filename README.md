@@ -65,6 +65,9 @@ Copy-paste prompts:
 edit this
 ```
 
+**Forgot the steps? Type `[HOW]`** and the agent replies with this guide, step by step, with
+blue markers (🟦). It does nothing else.
+
 Tell it the **story** and the **length** you want. Format: `edit this <story> <length>`
 
 ```text

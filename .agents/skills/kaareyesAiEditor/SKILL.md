@@ -29,6 +29,20 @@ relative to `kit/`, so run kit commands from there.
 Setup and Groq transcription need internet. If your agent runs commands in a sandbox without
 network access (Codex does by default), ask the user to approve network access for them.
 
+## When the user types [HOW]
+
+Reply with the how-to-use guide and do nothing else (no setup, no editing). Keep it short,
+in the user's language, with blue markers (🟦) for the steps and `code` for what to type:
+
+🟦 **1. Drop your video** in `inbox/` (or drag it into the chat).
+🟦 **2. Type** `edit this` or `edit this <story> <30 seconds>`
+   Example: `edit this: day 1 in Bali, tiny planet trick, 30 seconds`
+🟦 **3. Watch the draft** in `outbox/<name>-v1.mp4`.
+🟦 **4. Give notes** in plain words: "faster", "bigger captions", "palitan ang hook".
+   Say "always ..." or "never ..." to save a lasting rule.
+🟦 **5. Type** `approved` or `final` for the full-quality `-final.mp4`.
+🟦 **More:** `horizontal version` for YouTube, `change my style`, `start` to set up again.
+
 ## When the user says "start" (or kit/ or my-style.md is missing)
 
 1. Say in one line that you will set things up, then run `node setup.mjs`.

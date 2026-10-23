@@ -91,6 +91,10 @@ silence and mistake cuts, design, preview, and draft render. Do not stop for app
 steps. Ask first only for anything that costs money or uploads elsewhere (ElevenLabs, Kie.ai,
 any other paid API). The default is to use none of them.
 
+0. The request can be `edit this <story> <length>` (for example "edit this: day 1 in Bali,
+   tiny planet trick, 30 seconds"). The story is the angle and the hook; the length is the
+   target duration. Cut to land within about 2 seconds of it, keeping the payoff. If one is
+   missing, infer it from the footage and say what you chose.
 1. Find the source: the path in the message, or else the newest video in `inbox/` that has no
    output yet. If the user attached a video but you cannot see a file path, ask them to put it
    in `inbox/`. Make a slug from the file name plus today's date.

@@ -49,7 +49,7 @@ Open your agent **in the `free247editor` folder** every time, then follow these 
 
 1. **Drop your video in `inbox/`** (or drag it into the chat). Phone footage in `.MOV` or
    `.MP4` is fine; your original is never changed.
-2. **Say `edit this`.** The agent transcribes it, cuts dead air, adds captions, a hook,
+2. **Say `edit this`**, or `edit this <story> <30 seconds>` to set the story and length. The agent transcribes it, cuts dead air, adds captions, a hook,
    motion cards, and light sound effects in your style, then renders a draft.
 3. **Watch the draft.** It opens automatically and is saved as `outbox/<name>-v1.mp4`.
 4. **Give notes in plain words**, for example:
@@ -64,6 +64,20 @@ Copy-paste prompts:
 ```text
 edit this
 ```
+
+Tell it the **story** and the **length** you want. Format: `edit this <story> <length>`
+
+```text
+edit this <story> <30 seconds>
+```
+
+```text
+edit this: day 1 in Bali, the tiny planet camera trick, 30 seconds
+```
+
+The story is what the video is about, in your own words. The length is the target duration.
+The agent builds the hook, picks the best moments, and cuts to fit that length. If you leave
+them out, it keeps your natural pacing and tells you what it chose.
 
 ```text
 Edit the newest video in inbox. I'm a travel vlogger: keep it natural, show the place name
